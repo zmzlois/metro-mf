@@ -7,6 +7,7 @@
     "ios": "react-native run-ios",
     "android:release": "react-native run-android --no-packager --mode 'Release'",
     "ios:release": "react-native run-ios --no-packager --mode 'Release'",
+    "zephyr:bundle": "DEBUG=zephyr:* npx react-native bundle --platform android --dev false --entry-file index.js",
     "lint": "eslint .",
     "dev": "nodemon --config ../../nodemon.json --exec yarn start",
     "start": "react-native start --reset-cache --client-logs",
@@ -21,7 +22,7 @@
     "lodash": "4.16.6",
     "react": "19.0.0",
     "react-native": "0.79.0",
-    "zephyr-metro-plugin": "/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-metro-plugin"
+    "zephyr-metro-plugin": "/Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-metro-plugin"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -49,5 +50,9 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "zephyr:dependencies": {
+    "mini": "mini.metro-mf.zmzlois@0.0.1",
+    "nestedMini": "nestedMini.metro-mf.zmzlois@0.0.1"
   }
 }
