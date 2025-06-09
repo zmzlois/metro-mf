@@ -1,7 +1,7 @@
+import { promises as fs } from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import chalk from "chalk";
-import { promises as fs } from "fs";
 import { mergeConfig } from "metro";
 import Server from "metro/src/Server";
 import type { RequestOptions, OutputOptions } from "metro/src/shared/types";
@@ -15,6 +15,8 @@ import {
   BundleFederatedRemoteArgs,
   BundleFederatedRemoteConfig,
 } from "./types";
+
+const DEFAULT_OUTPUT = "dist";
 
 declare global {
   var __METRO_FEDERATION_CONFIG: ModuleFederationConfigNormalized;
@@ -237,10 +239,17 @@ async function bundleFederatedRemote(
   });
 
   const server = new Server(config);
+  // setup enhance middleware to trigger virtual modules setup
+  config.server.enhanceMiddleware(server.processRequest, server);
+
   const resolver = await createResolver(server, args.platform);
 
-  // TODO: make this configurable
-  const outputDir = path.resolve(config.projectRoot, "dist");
+  const outputDir = args.output
+    ? path.resolve(path.join(args.output, args.platform))
+    : path.resolve(
+        config.projectRoot,
+        path.join(DEFAULT_OUTPUT, args.platform)
+      );
 
   const containerModule: ModuleDescriptor = {
     [federationConfig.filename]: {
