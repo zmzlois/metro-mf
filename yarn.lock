@@ -5887,7 +5887,7 @@ __metadata:
     react-native: "npm:0.79.0"
     react-test-renderer: "npm:19.0.0"
     typescript: "npm:5.0.4"
-    zephyr-metro-plugin: /Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-metro-plugin
+    zephyr-metro-plugin: /Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-metro-plugin
   languageName: unknown
   linkType: soft
 
@@ -7786,7 +7786,7 @@ __metadata:
     react-test-renderer: "npm:19.0.0"
     serve: "npm:^14.2.4"
     typescript: "npm:5.0.4"
-    zephyr-metro-plugin: /Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-metro-plugin
+    zephyr-metro-plugin: /Users/lois/Documents/github/work/repos/zephyr-packages/libs/zephyr-metro-plugin
   languageName: unknown
   linkType: soft
 
@@ -8006,7 +8006,7 @@ __metadata:
     react-test-renderer: "npm:19.0.0"
     serve: "npm:^14.2.4"
     typescript: "npm:5.0.4"
-    zephyr-metro-plugin: /Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-metro-plugin
+    zephyr-metro-plugin: /Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-metro-plugin
   languageName: unknown
   linkType: soft
 
@@ -9525,7 +9525,7 @@ __metadata:
     react-native: "npm:0.79.0"
     react-test-renderer: "npm:19.0.0"
     typescript: "npm:5.0.4"
-    zephyr-metro-plugin: /Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-metro-plugin
+    zephyr-metro-plugin: /Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-metro-plugin
   languageName: unknown
   linkType: soft
 
@@ -10921,9 +10921,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zephyr-agent@portal:/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-agent::locator=metro-mf%40workspace%3A.":
+"zephyr-agent@portal:/Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-agent::locator=metro-mf%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "zephyr-agent@portal:/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-agent::locator=metro-mf%40workspace%3A."
+  resolution: "zephyr-agent@portal:/Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-agent::locator=metro-mf%40workspace%3A."
   dependencies:
     axios: "npm:^1.9.0"
     axios-retry: "npm:^4.5.0"
@@ -10942,61 +10942,61 @@ __metadata:
   languageName: node
   linkType: soft
 
-"zephyr-edge-contract@portal:/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-edge-contract::locator=metro-mf%40workspace%3A.":
+"zephyr-edge-contract@portal:/Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-edge-contract::locator=metro-mf%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "zephyr-edge-contract@portal:/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-edge-contract::locator=metro-mf%40workspace%3A."
+  resolution: "zephyr-edge-contract@portal:/Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-edge-contract::locator=metro-mf%40workspace%3A."
   dependencies:
     tslib: "catalog:typescript"
   languageName: node
   linkType: soft
 
-"zephyr-metro-plugin@file:/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-metro-plugin::locator=host%40workspace%3Aapps%2Fexample-host":
+"zephyr-metro-plugin@file:/Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-metro-plugin::locator=host%40workspace%3Aapps%2Fexample-host":
   version: 0.0.1
-  resolution: "zephyr-metro-plugin@file:/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-metro-plugin#/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-metro-plugin::hash=4600ab&locator=host%40workspace%3Aapps%2Fexample-host"
+  resolution: "zephyr-metro-plugin@file:/Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-metro-plugin#/Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-metro-plugin::hash=ce6be1&locator=host%40workspace%3Aapps%2Fexample-host"
   dependencies:
     metro-config: "npm:^0.82.4"
     zephyr-agent: "workspace:*"
     zephyr-xpack-internal: "workspace:*"
-  checksum: 10c0/33145ba3db411f312651af9ed6a786f655316f08ffdad892d0a476b5b6678052862a28806a9f8c3148fb683b657c2f1e4acd0c8b78f9ebb5022998d4edd88610
+  checksum: 10c0/0465e79754934b4d6bac11e981ce88f685d8c8bbeab3db5e33ca3c27fbb1214bcf05af7c01fd8c0bc93a26f278fbd6380bff9e93a6a487bc75ed773ff4cf97df
   languageName: node
   linkType: hard
 
-"zephyr-metro-plugin@file:/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-metro-plugin::locator=mini%40workspace%3Aapps%2Fexample-mini":
+"zephyr-metro-plugin@file:/Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-metro-plugin::locator=nestedMini%40workspace%3Aapps%2Fexample-nested-mini":
   version: 0.0.1
-  resolution: "zephyr-metro-plugin@file:/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-metro-plugin#/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-metro-plugin::hash=4600ab&locator=mini%40workspace%3Aapps%2Fexample-mini"
+  resolution: "zephyr-metro-plugin@file:/Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-metro-plugin#/Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-metro-plugin::hash=ce6be1&locator=nestedMini%40workspace%3Aapps%2Fexample-nested-mini"
   dependencies:
     metro-config: "npm:^0.82.4"
     zephyr-agent: "workspace:*"
     zephyr-xpack-internal: "workspace:*"
-  checksum: 10c0/33145ba3db411f312651af9ed6a786f655316f08ffdad892d0a476b5b6678052862a28806a9f8c3148fb683b657c2f1e4acd0c8b78f9ebb5022998d4edd88610
+  checksum: 10c0/0465e79754934b4d6bac11e981ce88f685d8c8bbeab3db5e33ca3c27fbb1214bcf05af7c01fd8c0bc93a26f278fbd6380bff9e93a6a487bc75ed773ff4cf97df
   languageName: node
   linkType: hard
 
-"zephyr-metro-plugin@file:/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-metro-plugin::locator=nestedMini%40workspace%3Aapps%2Fexample-nested-mini":
+"zephyr-metro-plugin@file:/Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-metro-plugin::locator=showcase-mini%40workspace%3Aapps%2Fshowcase-mini":
   version: 0.0.1
-  resolution: "zephyr-metro-plugin@file:/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-metro-plugin#/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-metro-plugin::hash=4600ab&locator=nestedMini%40workspace%3Aapps%2Fexample-nested-mini"
+  resolution: "zephyr-metro-plugin@file:/Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-metro-plugin#/Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-metro-plugin::hash=ce6be1&locator=showcase-mini%40workspace%3Aapps%2Fshowcase-mini"
   dependencies:
     metro-config: "npm:^0.82.4"
     zephyr-agent: "workspace:*"
     zephyr-xpack-internal: "workspace:*"
-  checksum: 10c0/33145ba3db411f312651af9ed6a786f655316f08ffdad892d0a476b5b6678052862a28806a9f8c3148fb683b657c2f1e4acd0c8b78f9ebb5022998d4edd88610
+  checksum: 10c0/0465e79754934b4d6bac11e981ce88f685d8c8bbeab3db5e33ca3c27fbb1214bcf05af7c01fd8c0bc93a26f278fbd6380bff9e93a6a487bc75ed773ff4cf97df
   languageName: node
   linkType: hard
 
-"zephyr-metro-plugin@file:/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-metro-plugin::locator=showcase-mini%40workspace%3Aapps%2Fshowcase-mini":
+"zephyr-metro-plugin@file:/Users/lois/Documents/github/work/repos/zephyr-packages/libs/zephyr-metro-plugin::locator=mini%40workspace%3Aapps%2Fexample-mini":
   version: 0.0.1
-  resolution: "zephyr-metro-plugin@file:/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-metro-plugin#/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-metro-plugin::hash=4600ab&locator=showcase-mini%40workspace%3Aapps%2Fshowcase-mini"
+  resolution: "zephyr-metro-plugin@file:/Users/lois/Documents/github/work/repos/zephyr-packages/libs/zephyr-metro-plugin#/Users/lois/Documents/github/work/repos/zephyr-packages/libs/zephyr-metro-plugin::hash=ce6be1&locator=mini%40workspace%3Aapps%2Fexample-mini"
   dependencies:
     metro-config: "npm:^0.82.4"
     zephyr-agent: "workspace:*"
     zephyr-xpack-internal: "workspace:*"
-  checksum: 10c0/33145ba3db411f312651af9ed6a786f655316f08ffdad892d0a476b5b6678052862a28806a9f8c3148fb683b657c2f1e4acd0c8b78f9ebb5022998d4edd88610
+  checksum: 10c0/0465e79754934b4d6bac11e981ce88f685d8c8bbeab3db5e33ca3c27fbb1214bcf05af7c01fd8c0bc93a26f278fbd6380bff9e93a6a487bc75ed773ff4cf97df
   languageName: node
   linkType: hard
 
-"zephyr-xpack-internal@portal:/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-xpack-internal::locator=metro-mf%40workspace%3A.":
+"zephyr-xpack-internal@portal:/Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-xpack-internal::locator=metro-mf%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "zephyr-xpack-internal@portal:/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-xpack-internal::locator=metro-mf%40workspace%3A."
+  resolution: "zephyr-xpack-internal@portal:/Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-xpack-internal::locator=metro-mf%40workspace%3A."
   dependencies:
     "@module-federation/automatic-vendor-federation": "catalog:module-federation"
     is-ci: "catalog:plugin-shared"

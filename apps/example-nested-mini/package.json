@@ -19,7 +19,7 @@
     "lodash": "4.16.6",
     "react": "19.0.0",
     "react-native": "0.79.0",
-    "zephyr-metro-plugin": "/Users/denisbelocerkovec/Developer/zephyr/zephyr-packages/libs/zephyr-metro-plugin"
+    "zephyr-metro-plugin": "/Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-metro-plugin"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -48,5 +48,8 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "zephyr:dependencies": {
+    "mini": "mini.metro-mf.zmzlois@0.0.1"
   }
 }
