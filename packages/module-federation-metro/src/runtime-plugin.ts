@@ -1,41 +1,49 @@
 import type { FederationRuntimePlugin } from "@module-federation/runtime";
 
 declare global {
-  var __METRO_FEDERATION__: Record<string, any> & {
-    __HOST__: {
-      __shareInit: Promise<void>;
-      __shareLoading: Promise<void>;
-    };
-  };
   var __DEV__: boolean;
   var __METRO_GLOBAL_PREFIX__: string;
+  var __METRO_FEDERATION__: Record<string, any> & {
+    [key: string]: { __shareInit: Promise<void> };
+  };
+  var __FUSEBOX_HAS_FULL_CONSOLE_SUPPORT__: boolean;
   var __loadBundleAsync: (entry: string) => Promise<void>;
 }
 
-const getPublicPath = (url: string) => {
-  return url.split("/").slice(0, -1).join("/");
+const getQueryParams = () => {
+  const isFuseboxEnabled = !!global.__FUSEBOX_HAS_FULL_CONSOLE_SUPPORT__;
+  const queryParams: Record<string, string> = {
+    platform: require("react-native").Platform.OS,
+    dev: "true",
+    lazy: "true",
+    minify: "false",
+    runModule: "true",
+    modulesOnly: "false",
+  };
+
+  if (isFuseboxEnabled) {
+    queryParams.excludeSource = "true";
+    queryParams.sourcePaths = "url-server";
+  }
+
+  return new URLSearchParams(queryParams);
 };
 
 const buildUrlForEntryBundle = (entry: string) => {
   if (__DEV__) {
-    // inlined by metro
-    const platform = require("react-native").Platform.OS;
-    return `${entry}?platform=${platform}&dev=${true}&lazy=${true}`;
-  } else {
-    return entry;
+    return `${entry}?${getQueryParams().toString()}`;
   }
+  return entry;
 };
 
 const MetroCorePlugin: () => FederationRuntimePlugin = () => ({
   name: "metro-core-plugin",
   loadEntry: async ({ remoteInfo }) => {
     const { entry, entryGlobalName } = remoteInfo;
-    const loadBundleAsyncGlobalKey = `${
-      __METRO_GLOBAL_PREFIX__ ?? ""
-    }__loadBundleAsync`;
 
-    // @ts-ignore
-    const __loadBundleAsync = global[loadBundleAsyncGlobalKey];
+    const __loadBundleAsync =
+      // @ts-expect-error dynamic key access on global object
+      global[`${__METRO_GLOBAL_PREFIX__ ?? ""}__loadBundleAsync`];
 
     const loadBundleAsync =
       __loadBundleAsync as typeof global.__loadBundleAsync;
@@ -52,8 +60,7 @@ const MetroCorePlugin: () => FederationRuntimePlugin = () => ({
         throw new Error();
       }
 
-      global.__METRO_FEDERATION__[entryGlobalName].location =
-        getPublicPath(entry);
+      global.__METRO_FEDERATION__[entryGlobalName].location = entryUrl;
 
       return global.__METRO_FEDERATION__[entryGlobalName];
     } catch (error) {

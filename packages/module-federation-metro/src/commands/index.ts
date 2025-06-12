@@ -1,15 +1,13 @@
-import type { Command } from "@react-native-community/cli-types";
+export {
+  default as bundleFederatedHost,
+  bundleFederatedHostOptions,
+} from "./bundle-host";
 
-import bundleFederatedRemote from "./command";
-import options from "./options";
+export {
+  default as bundleFederatedRemote,
+  bundleFederatedRemoteOptions,
+} from "./bundle-remote";
 
-const bundleMFRemoteCommand: Command = {
-  name: "bundle-mf-remote",
-  description:
-    "Bundles a Module Federation remote, including its container entry and all exposed modules for consumption by host applications",
-  // @ts-ignore
-  func: bundleFederatedRemote,
-  options,
-};
-
-export default [bundleMFRemoteCommand];
+export type { BundleFederatedHostArgs } from "./bundle-host/types";
+export type { BundleFederatedRemoteArgs } from "./bundle-remote/types";
+export type { Config } from "./types";

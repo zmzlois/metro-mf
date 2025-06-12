@@ -1,11 +1,11 @@
-import "mf:async-require-remote";
+import "mf:async-require";
 
-import { loadSharedToRegistry } from "mf:shared-registry";
+import { loadSharedToRegistry } from "mf:remote-module-registry";
 import { init as runtimeInit } from "@module-federation/runtime";
 
 __PLUGINS__;
 
-const usedRemotes = [];
+const usedRemotes = __REMOTES__;
 const usedShared = __SHARED__;
 
 const exposesMap = __EXPOSES_MAP__;
@@ -21,6 +21,8 @@ const initTokens = {};
 const shareScopeName = "default";
 const shareStrategy = __SHARE_STRATEGY__;
 const name = __NAME__;
+
+let hmrInitialized = false;
 
 async function init(shared = {}, initScope = []) {
   const initRes = runtimeInit({
@@ -43,7 +45,7 @@ async function init(shared = {}, initScope = []) {
   initScope.push(initToken);
   initRes.initShareScopeMap(shareScopeName, shared);
 
-  global.__METRO_FEDERATION__[__NAME__].__shareInit = Promise.all(
+  await Promise.all(
     initRes.initializeSharing(shareScopeName, {
       strategy: shareStrategy,
       from: "build",
@@ -51,13 +53,30 @@ async function init(shared = {}, initScope = []) {
     })
   );
 
-  await Promise.all(Object.keys(usedShared).map(loadSharedToRegistry));
+  // load early shared deps
+  __EARLY_SHARED__.forEach(loadSharedToRegistry);
+
+  // setup HMR client after the initializing sync shared deps
+  if (__DEV__ && !hmrInitialized) {
+    const hmr = require("mf:remote-hmr");
+    hmr.setup();
+    hmrInitialized = true;
+  }
+
+  // load the rest of shared deps
+  await Promise.all(Object.keys(shared).map(loadSharedToRegistry));
 
   return initRes;
 }
 
 global.__METRO_FEDERATION__[__NAME__] =
   global.__METRO_FEDERATION__[__NAME__] || {};
+
+global.__METRO_FEDERATION__[__NAME__].dependencies = global
+  .__METRO_FEDERATION__[__NAME__].dependencies || {
+  shared: {},
+  remotes: {},
+};
 
 global.__METRO_FEDERATION__[__NAME__].get = get;
 global.__METRO_FEDERATION__[__NAME__].init = init;
