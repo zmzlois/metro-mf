@@ -44,9 +44,11 @@ const MetroCorePlugin: () => FederationRuntimePlugin = () => ({
     const __loadBundleAsync =
       // @ts-expect-error dynamic key access on global object
       global[`${__METRO_GLOBAL_PREFIX__ ?? ""}__loadBundleAsync`];
+    console.log("__loadBundleAsync", __loadBundleAsync);
 
     const loadBundleAsync =
       __loadBundleAsync as typeof global.__loadBundleAsync;
+    console.log("loadBundleAsync", loadBundleAsync);
 
     if (!loadBundleAsync) {
       throw new Error("loadBundleAsync is not defined");
@@ -54,14 +56,19 @@ const MetroCorePlugin: () => FederationRuntimePlugin = () => ({
 
     try {
       const entryUrl = buildUrlForEntryBundle(entry);
+      console.log("entryUrl", entryUrl);
       await loadBundleAsync(entryUrl);
 
       if (!global.__METRO_FEDERATION__[entryGlobalName]) {
+        console.log(
+          "we don't have global.__METRO_FEDERATION__[entryGlobalName]"
+        );
         throw new Error();
       }
 
       global.__METRO_FEDERATION__[entryGlobalName].location = entryUrl;
 
+      console.log("global.__METRO_FEDERATION__", global.__METRO_FEDERATION__);
       return global.__METRO_FEDERATION__[entryGlobalName];
     } catch (error) {
       console.error(

@@ -1,5 +1,5 @@
 {
-  "name": "example-mini",
+  "name": "mini",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -19,7 +19,8 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "react": "19.0.0",
-    "react-native": "0.79.0"
+    "react-native": "0.79.0",
+    "zephyr-metro-plugin": "/Users/lois/Documents/github/work/repos/zephyr-packages/libs/zephyr-metro-plugin"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

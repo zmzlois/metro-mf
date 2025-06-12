@@ -1,5 +1,5 @@
 {
-  "name": "example-host",
+  "name": "host",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,6 +7,7 @@
     "ios": "rnef run:ios",
     "android:release": "rnef run:android --variant 'Release'",
     "ios:release": "rnef run:ios --configuration 'Release'",
+    "zephyr:bundle": "DEBUG=zephyr:* npx react-native bundle --platform android --dev false --entry-file index.js",
     "lint": "eslint .",
     "dev": "nodemon --config ../../nodemon.json --exec yarn start",
     "start": "rnef start --reset-cache --client-logs",
@@ -20,7 +21,8 @@
   "dependencies": {
     "lodash": "4.16.6",
     "react": "19.0.0",
-    "react-native": "0.79.0"
+    "react-native": "0.79.0",
+    "zephyr-metro-plugin": "/Users/lois/Documents/Github/work/repos/zephyr-packages/libs/zephyr-metro-plugin"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -50,5 +52,9 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "zephyr:dependencies": {
+    "mini": "mini.metro-mf.zmzlois@0.0.1",
+    "nestedMini": "nestedMini.metro-mf.zmzlois@0.0.1"
   }
 }
